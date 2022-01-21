@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fooldal</title>
+</head>
+<body>
+    
+    <h1>Udv a fooldalon!</h1>
+
+    <input type="button" onclick="location.href="{% url 'uj-szemely.html' %} "value="Új személy">
+
+   <ul>
+        {% for szemely in szemelyek %}
+            <li>
+                {% if szemely.hazas %}
+                    <span style="color:green;">{{ szemely.vezeteknev }} {{ szemely.keresztnev }}</span>
+                {% else %}
+                    <span style="color:blue;">{{ szemely.vezeteknev }} {{ szemely.keresztnev }}</span>
+                {% endif %}
+
+            
+            </li> 
+     
+
+
+        {% endfor %}
+    </ul>
+        
+</body>
+</html>
